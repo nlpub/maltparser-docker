@@ -34,10 +34,16 @@ rm *.gz *.tgz && \
 sed -i "s#use lib('/corpora/tools'#use File::Basename;\nuse lib(dirname(\$0)#g" cmd/lemmatiser.pl
 
 RUN \
-mkdir cstlemma && cd cstlemma && \
-curl -LO 'https://raw.githubusercontent.com/kuhumcst/cstlemma/master/doc/makecstlemma.bash' && \
-bash makecstlemma.bash && \
-cp cstlemma/src/cstlemma /malt/treetagger/cmd/
+curl -LO 'https://github.com/kuhumcst/parsesgml/archive/master.tar.gz' && \
+tar zxf master.tar.gz && mv parsesgml-master parsesgml && rm master.tar.gz && \
+curl -LO 'https://github.com/kuhumcst/letterfunc/archive/master.tar.gz' && \
+tar zxf master.tar.gz && mv letterfunc-master letterfunc && rm master.tar.gz && \
+curl -LO 'https://github.com/kuhumcst/hashmap/archive/master.tar.gz' && \
+tar zxf master.tar.gz && mv hashmap-master hashmap && rm master.tar.gz && \
+curl -LO 'https://github.com/kuhumcst/cstlemma/archive/master.tar.gz' && \
+tar zxf master.tar.gz && mv cstlemma-master cstlemma && rm master.tar.gz && \
+cd cstlemma/src && make && \
+cp cstlemma /malt/treetagger/cmd/
 
 RUN \
 curl \
