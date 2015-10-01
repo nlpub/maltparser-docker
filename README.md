@@ -5,7 +5,7 @@
 [docker_badge]: https://img.shields.io/docker/pulls/nlpub/russian-malt.svg
 [docker_link]: https://hub.docker.com/r/nlpub/russian-malt/
 
-This repository contains a convenient image containing properly built MaltParser for Russian.
+This repository contains a convenient image with a properly built MaltParser for Russian. The `Dockerfile` is based on a [gist](https://gist.github.com/versusvoid/da4e71467a4c0f9e1a1c) written by @versusvoid.
 
 * [MaltParser](http://maltparser.org/)
 * [Model for MaltParser](http://corpus.leeds.ac.uk/mocky/)

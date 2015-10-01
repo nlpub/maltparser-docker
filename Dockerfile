@@ -31,7 +31,8 @@ tar xf lemma-ru.tgz -C cmd && \
 mv smallutils.pm cmd/ && \
 ln -sf /malt/treetagger/cmd/utf8-tokenize.perl /malt/treetagger/cmd/utf8-tokenize.pl && \
 rm *.gz *.tgz && \
-sed -i "s#use lib('/corpora/tools'#use File::Basename;\nuse lib(dirname(\$0)#g" cmd/lemmatiser.pl
+sed -i "s#use lib('/corpora/tools'#use File::Basename;\nuse lib(dirname(\$0)#g" cmd/lemmatiser.pl && \
+sed -i 's/    if ($lline=<$fh>) { #read the next line for the lemma/    if (defined($lline=<$fh>)) { #read the next line for the lemma/g' cmd/lemmatiser.pl
 
 RUN \
 curl -LO 'https://github.com/kuhumcst/parsesgml/archive/master.tar.gz' && \
