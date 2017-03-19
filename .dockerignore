@@ -1,2 +1,4 @@
 *.md
 LICENSE
+Dockerfile
+docker-compose.yml
