@@ -19,7 +19,7 @@ WORKDIR /malt
 RUN \
 mkdir treetagger && cd treetagger && \
 curl \
--O 'http://www.cis.uni-muenchen.de/~schmid/tools/TreeTagger/data/tree-tagger-linux-3.2.tar.gz' \
+-O 'http://www.cis.uni-muenchen.de/~schmid/tools/TreeTagger/data/tree-tagger-linux-3.2.1.tar.gz' \
 -O 'http://www.cis.uni-muenchen.de/~schmid/tools/TreeTagger/data/tagger-scripts.tar.gz' \
 -O 'http://www.cis.uni-muenchen.de/~schmid/tools/TreeTagger/data/install-tagger.sh' \
 -O 'http://www.cis.uni-muenchen.de/~schmid/tools/TreeTagger/data/russian-par-linux-3.2-utf8.bin.gz' \
